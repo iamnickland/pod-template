@@ -177,9 +177,9 @@ module Pod
       FileUtils.mv "NAME.podspec", "#{pod_name}.podspec"
     end
 
-    def rename_classes_folder
-      FileUtils.mv "Sources", "Sources"
-    end
+    # def rename_classes_folder
+    #   FileUtils.mv "Sources", "Sources"
+    # end
 
     def reinitialize_git_repo
       `rm -rf .git`
