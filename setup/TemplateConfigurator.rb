@@ -178,7 +178,7 @@ module Pod
     end
 
     def rename_classes_folder
-      FileUtils.mv "Pod", @pod_name
+      FileUtils.mv "Sources", @pod_name
     end
 
     def reinitialize_git_repo
