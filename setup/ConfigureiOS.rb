@@ -13,9 +13,8 @@ module Pod
 
     def perform
 
-      keep_demo = :yes #configurator.ask_with_answers("Would you like to include a demo application with your library", ["Yes", "No"]).to_sym
-
-      framework = :none #configurator.ask_with_answers("Which testing frameworks will you use", ["Specta", "Kiwi", "None"]).to_sym
+      keep_demo = :yes
+      framework = :none
       configurator.set_test_framework("xctest", "m", "ios")
 
       prefix = nil
