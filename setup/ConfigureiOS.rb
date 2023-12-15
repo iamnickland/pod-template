@@ -12,18 +12,16 @@ module Pod
     end
 
     def perform
-
       keep_demo = :yes
       framework = :none
       configurator.set_test_framework("xctest", "m", "ios")
 
-      prefix = nil
       Pod::ProjectManipulator.new({
         :configurator => @configurator,
         :xcodeproj_path => "templates/ios/Example/PROJECT.xcodeproj",
         :platform => :ios,
         :remove_demo_project => (keep_demo == :no),
-        :prefix => prefix
+        :prefix => ""
       }).run
 
       # There has to be a single file in the Classes dir

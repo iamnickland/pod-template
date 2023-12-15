@@ -25,7 +25,7 @@ module Pod
         "PROJECT" => @configurator.pod_name,
         "CPD" => @prefix
       }
-      # replace_internal_project_settings
+      replace_internal_project_settings
 
       @project = Xcodeproj::Project.open(@xcodeproj_path)
       add_podspec_metadata
@@ -123,18 +123,18 @@ RUBY
       end
     end
 
-    # def replace_internal_project_settings
-    #   Dir.glob(project_folder + "/**/**/**/**").each do |name|
-    #     next if Dir.exist? name
-    #     text = File.read(name)
+    def replace_internal_project_settings
+      Dir.glob(project_folder + "/**/**/**/**").each do |name|
+        next if Dir.exist? name
+        text = File.read(name)
 
-    #     for find, replace in @string_replacements
-    #         text = text.gsub(find, replace)
-    #     end
+        for find, replace in @string_replacements
+            text = text.gsub(find, replace)
+        end
 
-    #     File.open(name, "w") { |file| file.puts text }
-    #   end
-    # end
+        File.open(name, "w") { |file| file.puts text }
+      end
+    end
 
   end
 
