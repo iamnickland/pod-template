@@ -21,7 +21,7 @@ module Pod
         :xcodeproj_path => "templates/ios/Example/PROJECT.xcodeproj",
         :platform => :ios,
         :remove_demo_project => (keep_demo == :no),
-        :prefix => ""
+        :prefix => "NL"
       }).run
 
       # There has to be a single file in the Classes dir
